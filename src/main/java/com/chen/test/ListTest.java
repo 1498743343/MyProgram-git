@@ -2,6 +2,7 @@ package com.chen.test;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

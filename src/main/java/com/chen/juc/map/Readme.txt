@@ -1,0 +1,4 @@
+在几个常用map的并发测试后发现：
+1、Hashtable 和 SynchronizedMap插入效率接近，大概都为500ms，ConcurrentHashMap的插入效率我测试在200ms左右，但是马士兵测试在1000ms以上，HashMap在并发下直接崩掉
+2、在集合中取值的效率ConcurrentHashMap极高，1000万次取值耗时在1000ms以内，而其他两个容器均大于1分钟
+3、Hashtable 和 SynchronizedMap之所以效率低是因为对put和get方法整体加锁，而ConcurrentHashMap采用了分段式锁

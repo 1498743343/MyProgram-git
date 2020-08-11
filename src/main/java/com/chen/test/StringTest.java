@@ -1,5 +1,15 @@
 package com.chen.test;
 
+import com.chen.entity.User;
+import com.chen.utils.AesUtils;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 /**
  * ClassName StringTest
  * Description TODO
@@ -9,12 +19,10 @@ package com.chen.test;
 
 public class StringTest {
     public static void main(String[] args) {
-        String s1 = "你好";
-        String s2 = "你";
-        String s3 = "好";
-        String s4 = s2+s3;
-        String s5 = "你"+"好";
-        System.out.println(s1==s4);
-        System.out.println(s1==s5);
+        String password = "nuLnNnLjcgUS7CpBwIMKJg==";
+        String decrypt = AesUtils.decrypt(password);
+        System.out.println(decrypt);
+        String pass = DigestUtils.md5Hex(decrypt);
+        System.out.println(pass);
     }
 }
